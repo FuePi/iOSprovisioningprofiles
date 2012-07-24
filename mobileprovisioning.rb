@@ -95,7 +95,7 @@ def main()
   
   verification = 'false'
   if options[:certificate] != nil
-    #curl http://www.apple.com/appleca/AppleIncRootCertificate.cer -o AppleIncRootCertificate.cer
+    #curl -O http://www.apple.com/appleca/AppleIncRootCertificate.cer
     store = OpenSSL::X509::Store.new
     cert = OpenSSL::X509::Certificate.new(File.read(options[:certificate])) 
     store.add_cert(cert)
